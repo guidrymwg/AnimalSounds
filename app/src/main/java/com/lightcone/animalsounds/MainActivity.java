@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         // Find which ImageButton was pressed and take appropriate action
 
-        switch(v.getId()){
+        switch (v.getId()) {
 
             // The cow button
             case R.id.imageButton:
