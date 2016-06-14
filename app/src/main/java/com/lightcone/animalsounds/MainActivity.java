@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     @Override
     public void onPause() {
         super.onPause();
-        // Release the MediaPlayer if going into background
+        // Release the MediaPlayer if going into background if it isn't null
         if(mp != null) mp.release();
     }
 }
