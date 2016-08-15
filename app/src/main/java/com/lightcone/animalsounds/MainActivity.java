@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     @Override
     public void onClick(View v) {
 
+        // Play only one sound at a time
+        if(mp != null) mp.release();
+
         // Find which ImageButton was pressed and take appropriate action
 
         switch (v.getId()) {
@@ -56,5 +59,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         }
         mp.seekTo(0);
         mp.start();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        // Release the MediaPlayer if going into background if it isn't null
+        if(mp != null) mp.release();
     }
 }
